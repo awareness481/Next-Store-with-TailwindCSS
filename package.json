@@ -17,5 +17,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.4.0"
   }
 }

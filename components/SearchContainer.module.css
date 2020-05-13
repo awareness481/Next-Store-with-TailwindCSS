@@ -1,0 +1,8 @@
+.search {
+    border: 1px solid rgba(0,0,0, 0.1);
+    width: 80vw;
+}
+
+.filters {
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}

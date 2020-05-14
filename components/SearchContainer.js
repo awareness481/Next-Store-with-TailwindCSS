@@ -4,7 +4,8 @@ import style from "./SearchContainer.module.css";
 const SearchContainer = () => {
   return (
     <div className="w-full flex flex-row">
-      <div className={`${style.filters} flex-grow h-16`}>
+      <div className={`${style.filters} flex-grow
+       h-16`}>
         <h3>Filters</h3>
       </div>
       <div

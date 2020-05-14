@@ -9,19 +9,19 @@ const Filters = () => {
 
           <div>
             <input type="checkbox" id="Lenovo" name="brand" />
-            <label for="Lenovo">Lenovo</label>
+            <label htmlFor="Lenovo">Lenovo</label>
           </div>
 
           <div>
             <input type="checkbox" id="HP" name="brand" />
-            <label for="HP">HP</label>
+            <label htmlFor="HP">HP</label>
           </div>
 
           <div>
             <input type="checkbox" id="Dell" name="brand" />
-            <label for="Dell">Dell</label>
+            <label htmlFor="Dell">Dell</label>
           </div>
-          
+
         </fieldset>
       </form>
     </div>

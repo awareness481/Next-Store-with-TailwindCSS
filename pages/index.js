@@ -1,15 +1,21 @@
+import { INIT_RESULTS } from '../actions/index';
+import { withRedux } from '../lib/with-redux';
+
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import SearchContainer from '../components/SearchContainer';
 import ResultsContainer from '../components/ResultsContainer';
 
-const Index = ({laptops}) => {
+import * as data from '../api-sample.json';
+
+const Index = () => {
+
   return (
     <div>
       <Navbar />
       <Banner />
       <SearchContainer />
-      <ResultsContainer laptops={laptops} />
+      <ResultsContainer />
       <div className="hero">
         <h1 className="title">Next.js + Tailwind CSS</h1>
       </div>
@@ -17,21 +23,20 @@ const Index = ({laptops}) => {
   )
 };
 
+Index.getInitialProps = ({reduxStore}) => {
 
-// This API implementantion is for DEV ONLY
-// Remove when appropriate
+  const { dispatch } = reduxStore;
+  dispatch({
+    type: INIT_RESULTS,
+    results: data.default.laptops
+  })
 
-export async function getStaticProps() {
-
-  const res = await fetch('http://localhost:3005/laptops');
-  const laptops = await res.json();
-
-  return {
-    props: {
-      laptops
-    }
-  }
+  return {};
 
 }
 
-export default Index;
+const mapStateToProps = (state) => ({
+  results: state.results
+});
+
+export default withRedux(Index);

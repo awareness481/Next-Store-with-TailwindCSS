@@ -1,4 +1,11 @@
 .results {
     border: 1px solid rgba(0,0,0, 0.1);
-    width: 80vw;
+    width: 85vw;
+}
+
+.thumbnail {
+    height: 40vh;
+    width: 19%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
 }

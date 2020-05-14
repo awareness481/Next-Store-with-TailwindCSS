@@ -19,6 +19,7 @@
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
-    "@svgr/cli": "^5.4.0"
+    "@svgr/cli": "^5.4.0",
+    "json-server": "^0.16.1"
   }
 }

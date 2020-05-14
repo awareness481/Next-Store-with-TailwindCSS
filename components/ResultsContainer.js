@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import Filters from './Filters';
 import Results from './Results';
 
@@ -11,4 +13,8 @@ const ResultsContainer = ({laptops}) => {
   )
 }
 
-export default ResultsContainer;
+const mapStateToProps = (state) => ({
+  laptops: state.results
+});
+
+export default connect(mapStateToProps)(ResultsContainer);

@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "api": "json-server api-sample.json --port=3005 --watch",
+    "dev_api": "concurrently \"npm run api\" \"npm run dev\" ",
     "dev": "next",
     "build": "next build",
     "start": "next start"

@@ -1,9 +1,40 @@
 import Laptop from '../../components/Laptop';
+import LaptopDescription from '../../components/LaptopDescription';
 
 const LaptopContainer = ({ laptop }) => {
+
+  const {
+    name,
+    brand,
+    cpu,
+    gpu,
+    os,
+    resolution,
+    ram,
+    screen,
+    ssd,
+    storage,
+    weight
+  } = laptop;
+
+  const desc = {
+    name,
+    brand,
+    cpu,
+    gpu,
+    os,
+    resolution,
+    ram,
+    screen,
+    ssd,
+    storage,
+    weight
+  }
+
   return (
     <div className="laptop-container w-full">
       <Laptop laptop={laptop} />
+      <LaptopDescription items={desc} />
     </div>
   );
 };

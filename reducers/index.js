@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { INIT_RESULTS } from '../actions/index';
+import { INIT_RESULTS, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, RECEIVE_ITEMS_LENGTH } from '../actions/index';
 
 function results(state = [], action) {
   switch (action.type) {
@@ -10,8 +10,28 @@ function results(state = [], action) {
   }
 }
 
+function cart(state = {}, action) {
+  switch (action.type) {
+    case ADD_TO_CART:
+      return {
+        ...state,
+        ...action.item
+      };
+    case REMOVE_FROM_CART:
+      const shallow = {...state};
+      delete(shallow[action.item])
+
+      return shallow;
+    case CLEAR_CART:
+      return {};
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   results,
+  cart
 });
 
 export default rootReducer;

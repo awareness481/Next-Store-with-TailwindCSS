@@ -35,8 +35,4 @@ Index.getInitialProps = ({reduxStore}) => {
 
 }
 
-const mapStateToProps = (state) => ({
-  results: state.results
-});
-
 export default withRedux(Index);

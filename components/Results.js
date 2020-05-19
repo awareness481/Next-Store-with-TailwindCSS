@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import Link from "next/link";
+
 import { ADD_TO_CART } from "../actions/index";
 import style from "./Results.module.css";
 
@@ -27,15 +29,21 @@ const Thumbnail = ({ laptop, dispatch }) => {
     >
       <div className="h-48 mb-2">
         <h1 className="text-gray-900 font-bold text-3xl px-4 py-2 uppercase">
-          {laptop.att_base_name}
+          <Link href={`/laptop/${laptop.id}`}>
+            <a>{laptop.att_base_name}</a>
+          </Link>
         </h1>
         <p className="text-gray-600 px-4 py-2 text-sm mt-1">{laptop.name}</p>
       </div>
-      <img
-        src={laptop.image}
-        alt="NIKE AIR"
-        className="h-48 w-full object-cover mx-auto"
-      />
+      <Link href={`/laptop/${laptop.id}`}>
+        <a>
+          <img
+            src={laptop.image}
+            alt="NIKE AIR"
+            className="h-48 w-full object-cover mx-auto"
+          />
+        </a>
+      </Link>
       <div className="flex items-center mt-auto justify-between px-4 py-2 bg-gray-900">
         <h1 className="text-gray-200 font-bold text-lg">$ {laptop.price}</h1>
         <button

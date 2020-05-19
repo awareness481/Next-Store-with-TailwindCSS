@@ -1,4 +1,4 @@
 node_modules/
 .next
-svg/
-api-sample.json
+/svg
+

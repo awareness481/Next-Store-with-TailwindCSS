@@ -1,10 +1,18 @@
 .description {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-40%);
+    margin: 0 auto;
 }
 
 .value {
-    min-width: 90%;
-    max-width: 90%;
+    min-width: 70%;
+    max-width: 70%;
+}
+
+@media (min-width: 1024px) {
+    .description {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-40%);
+    }
+    
+
 }

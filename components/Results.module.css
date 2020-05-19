@@ -5,7 +5,14 @@
 
 .thumbnail {
     height: 40vh;
-    width: 19%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+@media (min-width: 1024px) {
+    .thumbnail {
+        width: 19%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+    }
 }

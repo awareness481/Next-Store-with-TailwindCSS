@@ -14,11 +14,11 @@ const LaptopDescription = ({items}) => {
   
 
   return (
-    <div className={`${style.description} w-3/5 flex flex-col justify-center`}>
+    <div className={`${style.description} w-9/10 md:w-3/5 flex flex-col justify-center`}>
       {
         mapItems().map((item) => (
           <div className={`w-full flex flex-row py-4 px-2 justify-center text-2xl`}>
-            <span className='type mr-auto'>{item[0]}</span>
+            <span className='type mx-auto'>{item[0]}</span>
             <span className={`${style.value} w-9/10 block text-left`}>{item[1]}</span>
           </div>
         ))

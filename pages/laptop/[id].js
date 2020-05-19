@@ -1,5 +1,6 @@
 import Laptop from '../../components/Laptop';
 import LaptopDescription from '../../components/LaptopDescription';
+import Navbar from '../../components/Navbar';
 
 const LaptopContainer = ({ laptop }) => {
 
@@ -33,6 +34,7 @@ const LaptopContainer = ({ laptop }) => {
 
   return (
     <div className="laptop-container w-full">
+      <Navbar />
       <Laptop laptop={laptop} />
       <LaptopDescription items={desc} />
     </div>

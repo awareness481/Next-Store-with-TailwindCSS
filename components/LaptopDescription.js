@@ -14,7 +14,7 @@ const LaptopDescription = ({items}) => {
   
 
   return (
-    <div className='description w-3/5 flex flex-col justify-center mx-auto'>
+    <div className={`${style.description} w-3/5 flex flex-col justify-center`}>
       {
         mapItems().map((item) => (
           <div className={`w-full flex flex-row py-4 px-2 justify-center text-2xl`}>

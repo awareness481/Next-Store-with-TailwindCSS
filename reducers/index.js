@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { INIT_RESULTS, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, RECEIVE_ITEMS_LENGTH } from '../actions/index';
+import { INIT_RESULTS, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, TOGGLE_FILTER } from '../actions/index';
 
 function results(state = [], action) {
   switch (action.type) {
@@ -29,9 +29,27 @@ function cart(state = {}, action) {
   }
 }
 
+function filters(state = [], action) {
+  switch (action.type) {
+    case TOGGLE_FILTER:
+      const nextState = [...state];
+
+      if (!action.filter.checked) {
+        nextState.splice(nextState.indexOf(action.filter), 1)
+      } else {
+        nextState.push(action.filter.id);
+      }
+
+      return nextState;
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   results,
-  cart
+  cart,
+  filters
 });
 
 export default rootReducer;

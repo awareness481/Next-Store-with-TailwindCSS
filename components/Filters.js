@@ -1,6 +1,18 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const Filters = () => {
+const Filters = ({ dispatch }) => {
+  const handleSelect = (e) => {
+
+    dispatch({
+      type: 'TOGGLE_FILTER',
+      filter: {
+        id: e.target.id,
+        checked: e.target.checked
+      }
+    })
+  }
+
   return (
     <div className="filters flex-grow">
       <form>
@@ -8,17 +20,17 @@ const Filters = () => {
           <legend>Filters</legend>
 
           <div>
-            <input type="checkbox" id="Lenovo" name="brand" />
+            <input type="checkbox" id="Lenovo" name="brand" onClick={handleSelect} />
             <label htmlFor="Lenovo">Lenovo</label>
           </div>
 
           <div>
-            <input type="checkbox" id="HP" name="brand" />
+            <input type="checkbox" id="HP" name="brand" onClick={handleSelect}/>
             <label htmlFor="HP">HP</label>
           </div>
 
           <div>
-            <input type="checkbox" id="Dell" name="brand" />
+            <input type="checkbox" id="Dell" name="brand" onClick={handleSelect}/>
             <label htmlFor="Dell">Dell</label>
           </div>
 
@@ -28,4 +40,4 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+export default connect()(Filters);

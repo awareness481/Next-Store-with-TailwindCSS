@@ -18,3 +18,9 @@ const removeFromCart = (item) => ({
 
 export const CLEAR_CART = 'CLEAR_CART';
 const clearCart = () => ({ type: CLEAR_CART });
+
+export const TOGGLE_FILTER = 'TOGGLE_FILTER';
+const toggleFilter = (filter) => ({
+  type: TOGGLE_FILTER,
+  filter
+});

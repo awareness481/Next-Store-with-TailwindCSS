@@ -58,12 +58,11 @@ const Thumbnail = ({ laptop, dispatch }) => {
 };
 
 const Results = ({ laptops, dispatch }) => {
-  console.log(laptops);
 
   return (
     <div className={`${style.results} flex flex-row flex-wrap`}>
       {laptops.map((laptop) => (
-        <Thumbnail laptop={laptop} dispatch={dispatch} />
+        <Thumbnail laptop={laptop} dispatch={dispatch} key={laptop.id}/>
       ))}
     </div>
   );

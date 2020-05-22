@@ -3,6 +3,16 @@
     width: 80vw;
 }
 
+.search__title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .filters {
     border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.filters h3 {
+    line-height: 3.8rem;
 }

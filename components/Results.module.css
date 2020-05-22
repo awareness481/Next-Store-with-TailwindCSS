@@ -11,7 +11,8 @@
 
 @media (min-width: 1024px) {
     .thumbnail {
-        width: 19%;
+        height: 45vh;
+        width: 24%;
         margin-left: 0.5%;
         margin-right: 0.5%;
     }

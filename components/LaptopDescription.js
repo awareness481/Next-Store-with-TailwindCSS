@@ -18,7 +18,7 @@ const LaptopDescription = ({items}) => {
       {
         mapItems().map((item) => (
           <div className={`w-full flex flex-row py-4 px-2 justify-center text-2xl`}>
-            <span className='type mx-auto'>{item[0]}</span>
+            <span className='type mx-auto flex-grow'>{item[0]}</span>
             <span className={`${style.value} w-9/10 block text-left`}>{item[1]}</span>
           </div>
         ))

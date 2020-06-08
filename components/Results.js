@@ -28,12 +28,12 @@ const Thumbnail = ({ laptop, dispatch }) => {
       `}
     >
       <div className="h-48 mb-2">
-        <h1 className="text-yellow-vivid-600 font-bold text-3xl px-4 py-2 uppercase">
+        <h1 className="text-red-200 font-bold text-3xl px-4 py-2 uppercase">
           <Link href={`/laptop/${laptop.id}`}>
             <a>{laptop.att_base_name}</a>
           </Link>
         </h1>
-        <p className="text-cyan-600 px-4 py-2 text-lg mt-1">{laptop.name}</p>
+        <p className="text-warm-grey-500 px-4 py-2 text-lg mt-1">{laptop.name}</p>
       </div>
       <Link href={`/laptop/${laptop.id}`}>
         <a>
@@ -44,7 +44,7 @@ const Thumbnail = ({ laptop, dispatch }) => {
           />
         </a>
       </Link>
-      <div className="flex items-center mt-auto justify-between px-4 py-2 bg-red-500">
+      <div className="flex items-center mt-auto justify-between px-4 py-2 bg-cyan-500">
         <h1 className="text-gray-200 font-bold text-2xl">$ {laptop.price}</h1>
         <button
           className={`px-2 py-1 bg-warm-grey-100 text-lg text-cyan-600 font-semibold rounded uppercase hover:bg-gray-400 focus:bg-gray-400`}

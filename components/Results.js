@@ -11,6 +11,7 @@ const Thumbnail = ({ laptop, dispatch }) => {
       id: laptop.id,
       name: laptop.att_base_name,
       image: laptop.image,
+      price: laptop.price
     };
 
     dispatch({

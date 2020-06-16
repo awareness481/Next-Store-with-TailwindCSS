@@ -12,10 +12,9 @@ const CartContainer = ({ cart }) => {
     <div className="cart relative w-10 h-10">
       <CartIcon
         onMouseEnter={() => setVisibility("visible")}
-        onMouseLeave={() => setVisibility("invisible")}
       />
       <CartSize cart={cart} />
-      <CartModal cart={cart} visibility={visibility} />
+      <CartModal cart={cart} visibility={visibility} setVisibility={setVisibility} />
     </div>
   );
 };

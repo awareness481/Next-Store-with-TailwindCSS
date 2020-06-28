@@ -1,12 +1,13 @@
 import React from "react";
 import style from "./CartModal.module.css";
+import Link from 'next/link';
 
 const CartModal = ({ cart, visibility, setVisibility }) => {
   if (Object.keys(cart).length === 0) return null;
 
   return (
     <div
-      className={`${style.cartModal} cartModal ${visibility} absolute h-64 flex flex-col`}
+      className={`${style.cartModal} cartModal ${visibility} absolute flex flex-col`}
       onMouseLeave={() => setVisibility("invisible")}
     >
       {Object.keys(cart).map((item) => (
@@ -17,6 +18,9 @@ const CartModal = ({ cart, visibility, setVisibility }) => {
           {/* <span>{cart[item].price}</span> */}
         </div>
       ))}
+      <Link href='/order'>
+          <a>Checkout</a>
+      </Link>
     </div>
   );
 };

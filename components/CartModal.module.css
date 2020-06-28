@@ -2,8 +2,10 @@
     width: 30rem;
     min-height: 8rem;
     height: auto;
+    max-height: 45rem;
     left: -30rem;
     background-color: white;
+    overflow-y: scroll;
 
     .item {
         

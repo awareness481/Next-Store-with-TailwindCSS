@@ -17,7 +17,7 @@ const defaultData = {
   phone: "",
 };
 
-const Form = ({ items }) => {
+const CheckoutForm = ({ items }) => {
   const [formData, setFormData] = useState(defaultData);
   const [step, setStep] = useState(0);
 
@@ -40,3 +40,18 @@ const Form = ({ items }) => {
       <Submit incrementStep={setStep} step={step} setData={setFormData} />
     );
 };
+
+
+const Form = ({items}) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form done!');
+    return;
+  }
+
+  return (
+    <form className={`checkout`} onSubmit={handleSubmit}>
+      <Form items={items} />
+    </form>
+  )
+}

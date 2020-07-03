@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
-const Names = ({ incrementStep, step, setData }) => {
+const Names = ({ incrementStep, step, setData, data }) => {
   const [fistName, setFistName] = useState("");
   const [lastName, setLastName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData;
+    setData({
+      ...data,
+      fistName,
+      lastName
+    });
     incrementStep(step++);
   };
 

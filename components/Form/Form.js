@@ -10,7 +10,7 @@ const steps = ["names", "address", "contact", "review", "submit"];
 const defaultData = {
   firtName: "",
   lastName: "",
-  address: "",
+  street: "",
   country: "",
   city: "",
   email: "",
@@ -22,10 +22,10 @@ const CheckoutForm = ({ items }) => {
   const [step, setStep] = useState(0);
 
   if (steps[step] === "names")
-    return <Names incrementStep={setStep} step={step} setData={setFormData} />;
+    return <Names incrementStep={setStep} step={step} setData={setFormData} data={formData}/>;
   else if (steps[step] === "address")
     return (
-      <Address incrementStep={setStep} step={step} setData={setFormData} />
+      <Address incrementStep={setStep} step={step} setData={setFormData} data={formData}/>
     );
   else if (steps[step] === "contact")
     return (

@@ -3,7 +3,7 @@ import Names from "./Names";
 import Address from "./Address";
 import Contact from "./Contact";
 import Review from "./Review";
-import Submit from "./Submit;";
+import Submit from "./Submit";
 
 const steps = ["names", "address", "contact", "review", "submit"];
 
@@ -77,7 +77,10 @@ const Form = ({ items }) => {
 
   return (
     <form className={`checkout`} onSubmit={handleSubmit}>
-      <Form items={items} />
+      <CheckoutForm items={items} />
     </form>
   );
 };
+
+
+export default Form;

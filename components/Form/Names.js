@@ -11,7 +11,7 @@ const Names = ({ incrementStep, step, setData, data }) => {
       fistName,
       lastName
     });
-    incrementStep(step++);
+    return incrementStep(step + 1);
   };
 
   return (

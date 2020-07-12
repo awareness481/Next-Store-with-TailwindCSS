@@ -9,27 +9,31 @@ const Names = ({ incrementStep, step, setData, data }) => {
     setData({
       ...data,
       fistName,
-      lastName
+      lastName,
     });
     return incrementStep(step + 1);
   };
 
   return (
     <>
-      <label htmlFor="firstName">First name</label>
-      <input
-        name="fistName"
-        type="text"
-        value={fistName}
-        onChange={(e) => setFistName(e.target.value)}
-      />
-      <label htmlFor="lastName">Last name</label>
-      <input
-        name="lastname"
-        type="text"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
+      <fieldset>
+        <label htmlFor="firstName">First name</label>
+        <input
+          name="fistName"
+          type="text"
+          value={fistName}
+          onChange={(e) => setFistName(e.target.value)}
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor="lastName">Last name</label>
+        <input
+          name="lastname"
+          type="text"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+      </fieldset>
       <button onClick={handleSubmit}>Next</button>
     </>
   );

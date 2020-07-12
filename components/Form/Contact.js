@@ -9,27 +9,32 @@ const Contact = ({ incrementStep, step, setData, data }) => {
     setData({
       ...data,
       email,
-      phone
+      phone,
     });
     return incrementStep(step + 1);
-  };  
+  };
 
   return (
     <>
-      <label htmlFor="email">Email</label>
-      <input
-        name="email"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label htmlFor="phone">Phone number</label>
-      <input
-        name="phone"
-        type="tel"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
+      <fieldset>
+        <label htmlFor="email">Email</label>
+        <input
+          name="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </fieldset>
+      <fieldset>
+        <label htmlFor="phone">Phone number</label>
+        <input
+          name="phone"
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+      </fieldset>
+
       <button onClick={handleSubmit}>Next</button>
     </>
   );

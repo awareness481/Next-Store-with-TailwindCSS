@@ -4,6 +4,16 @@ const Contact = ({ incrementStep, step, setData, data }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setData({
+      ...data,
+      email,
+      phone
+    });
+    return incrementStep(step + 1);
+  };  
+
   return (
     <>
       <label htmlFor="email">Email</label>
@@ -20,6 +30,7 @@ const Contact = ({ incrementStep, step, setData, data }) => {
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
       />
+      <button onClick={handleSubmit}>Next</button>
     </>
   );
 };

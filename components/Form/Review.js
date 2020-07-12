@@ -11,7 +11,7 @@ const Review = ({ incrementStep, step, setData, data }) => {
   const handleNext = (e) => {
     e.preventDefault();
 
-    incrementStep(step++);
+    incrementStep(step + 1);
   }
 
   return (

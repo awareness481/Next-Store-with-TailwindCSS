@@ -3,7 +3,18 @@ import React, { useState } from "react";
 const Address = ({ incrementStep, step, setData, data }) => {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
-  const [street, setSteet] = useState("");
+  const [street, setStreet] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setData({
+      ...data,
+      street,
+      city,
+      country
+    });
+    return incrementStep(step + 1);
+  };
 
   return (
     <>
@@ -28,6 +39,7 @@ const Address = ({ incrementStep, step, setData, data }) => {
         value={street}
         onChange={(e) => setStreet(e.target.value)}
       />
+      <button onClick={handleSubmit}>Next</button>
     </>
   );
 };

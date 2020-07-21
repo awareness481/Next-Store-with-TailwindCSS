@@ -20,13 +20,13 @@ const FormStructure = ({ setData }) => {
   }
 
   return (
-    <div className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
-      <h2 className="text-lg text-gray-700 font-semibold capitalize">
+    <div className="max-w-6xl text-2xl p-6 mx-auto bg-white rounded-md shadow-md">
+      <h2 className="text-2xl text-gray-700 font-semibold capitalize">
         Personal details
       </h2>
 
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4">
           <div>
             <label className="text-gray-700" htmlFor="first-name">
               First name
@@ -123,7 +123,7 @@ const FormStructure = ({ setData }) => {
           </div>
         </div>
 
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-end mt-6">
           <button
             type="submit"
             className="px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"

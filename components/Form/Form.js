@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import Names from "./Names";
-import Address from "./Address";
-import Contact from "./Contact";
-import Review from "./Review";
-import Submit from "./Submit";
-
-const steps = ["names", "address", "contact", "review", "submit"];
+import { connect } from "react-redux";
+import Navbar from "../Navbar";
+import FormStructure from "./FormStructure";
+import StripeForm from "./StripeForm";
 
 const defaultData = {
   firtName: "",
@@ -17,70 +14,41 @@ const defaultData = {
   phone: "",
 };
 
-const CheckoutForm = ({ items }) => {
-  const [formData, setFormData] = useState(defaultData);
-  const [step, setStep] = useState(0);
-
-  if (steps[step] === "names")
-    return (
-      <Names
-        incrementStep={setStep}
-        step={step}
-        setData={setFormData}
-        data={formData}
-      />
-    );
-  else if (steps[step] === "address")
-    return (
-      <Address
-        incrementStep={setStep}
-        step={step}
-        setData={setFormData}
-        data={formData}
-      />
-    );
-  else if (steps[step] === "contact")
-    return (
-      <Contact
-        incrementStep={setStep}
-        step={step}
-        setData={setFormData}
-        data={formData}
-      />
-    );
-  else if (steps[step] === "review")
-    return (
-      <Review
-        incrementStep={setStep}
-        step={step}
-        setData={setFormData}
-        data={formData}
-      />
-    );
-  else if (steps[step] === "submit")
-    return (
-      <Submit
-        incrementStep={setStep}
-        step={step}
-        setData={setFormData}
-        data={formData}
-      />
-    );
-};
-
 const Form = ({ items }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form done!");
-    return;
-  };
+  const [data, setData] = useState({ ...defaultData });
+  const [displayPayment, setDisplayPayment] = useState(0);
+  
 
-  return (
-    <form className={`checkout`} onSubmit={handleSubmit}>
-      <CheckoutForm items={items} />
-    </form>
-  );
+  // return (
+  //   <>
+  //     <Navbar />
+  //     {displayPayment ? (
+  //       <FormStructure setData={setData} next={setDisplayPayment} />
+  //     ) : (
+  //       <StripeForm />
+  //     )}
+  //   </>
+  // );
+
+  if (displayPayment === 0) {
+    return (
+      <>
+      <Navbar />
+      <FormStructure setData={setData} next={setDisplayPayment} />
+      </>
+    )
+  } else if (displayPayment === 1) {
+    return (
+      <>
+      <Navbar />
+      <StripeForm />
+      </>
+    )
+  }
 };
 
+const mapStateToProps = (state) => ({
+  items: state.cart,
+});
 
-export default Form;
+export default connect(mapStateToProps)(Form);

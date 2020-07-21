@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormStructure = ({ setData }) => {
+const FormStructure = ({ setData, next }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +16,8 @@ const FormStructure = ({ setData }) => {
       zip: e.target['zip-code'].value
     }
 
-    return setData(data);
+    setData(data);
+    return next(1);
   }
 
   return (

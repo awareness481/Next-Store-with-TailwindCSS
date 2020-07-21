@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
-import Navbar from '../Navbar';
-import FormStructure from './FormStructure';
-
+import { connect } from "react-redux";
+import Navbar from "../Navbar";
+import FormStructure from "./FormStructure";
+import StripeForm from "./StripeForm";
 
 const defaultData = {
   firtName: "",
@@ -14,20 +14,41 @@ const defaultData = {
   phone: "",
 };
 
-
 const Form = ({ items }) => {
-  const [data, setData] = useState({...defaultData})
+  const [data, setData] = useState({ ...defaultData });
+  const [displayPayment, setDisplayPayment] = useState(0);
+  
 
-  return (
-    <>
+  // return (
+  //   <>
+  //     <Navbar />
+  //     {displayPayment ? (
+  //       <FormStructure setData={setData} next={setDisplayPayment} />
+  //     ) : (
+  //       <StripeForm />
+  //     )}
+  //   </>
+  // );
+
+  if (displayPayment === 0) {
+    return (
+      <>
       <Navbar />
-      <FormStructure setData={setData} />
-    </>
-  );
+      <FormStructure setData={setData} next={setDisplayPayment} />
+      </>
+    )
+  } else if (displayPayment === 1) {
+    return (
+      <>
+      <Navbar />
+      <StripeForm />
+      </>
+    )
+  }
 };
 
 const mapStateToProps = (state) => ({
-  items: state.cart
+  items: state.cart,
 });
 
 export default connect(mapStateToProps)(Form);

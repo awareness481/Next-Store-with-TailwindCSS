@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from 'react-redux';
+import Navbar from '../Navbar';
 import FormStructure from './FormStructure';
 
 
@@ -18,9 +20,14 @@ const Form = ({ items }) => {
 
   return (
     <>
+      <Navbar />
       <FormStructure setData={setData} />
     </>
   );
 };
 
-export default Form;
+const mapStateToProps = (state) => ({
+  items: state.cart
+});
+
+export default connect(mapStateToProps)(Form);

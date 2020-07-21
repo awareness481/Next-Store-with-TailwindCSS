@@ -1,4 +1,5 @@
 import Form from '../components/Form/Form';
+import { withRedux } from '../lib/with-redux';
 
 const FormTest = () => {
   return (
@@ -6,4 +7,4 @@ const FormTest = () => {
   )
 }
 
-export default FormTest;
+export default withRedux(FormTest);

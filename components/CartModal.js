@@ -19,7 +19,7 @@ const CartModal = ({ cart, visibility, setVisibility }) => {
         </div>
       ))}
       <Link href='/order'>
-          <a>Checkout</a>
+          <button className='mx-auto mb-1 w-1/2 rounded-md px-4 py-2 text-lg bg-yellow-vivid-500 text-white'>Checkout</button>
       </Link>
     </div>
   );

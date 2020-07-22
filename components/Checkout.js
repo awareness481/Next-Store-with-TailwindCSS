@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 import { connect } from "react-redux";
 import { REMOVE_FROM_CART } from "../actions/index";
 
@@ -34,6 +35,9 @@ const Checkout = ({ cart, dispatch }) => {
   return (
     <div className={`flex flex-col w-4/5 mx-auto my-0`}>
       {Object.keys(cart).length === 0 ? "No saved items" : mapCartItems()}
+      <Link href='/form-test'>
+        <button className='mx-auto w-32 rounded-md px-8 py-3 text-2xl bg-yellow-vivid-500 text-white'>Pay</button>
+      </Link>
     </div>
   );
 };

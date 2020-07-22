@@ -25,7 +25,7 @@ const FormStructure = ({ setData}) => {
   }
 
   return (
-    <div className="max-w-6xl text-2xl p-6 mx-auto bg-white rounded-md shadow-md">
+    <div className="max-w-6xl text-2xl p-6 mx-auto mt-32 bg-white rounded-md shadow-md">
       <h2 className="text-2xl text-gray-700 font-semibold capitalize">
         Personal details
       </h2>

@@ -10,6 +10,7 @@ const CartModal = ({ cart, visibility, setVisibility }) => {
       className={`${style.cartModal} cartModal ${visibility} absolute flex flex-col`}
       onMouseLeave={() => setVisibility("invisible")}
     >
+       <button onClick={() => setVisibility('invisible')} className='sm:invisible text-right pt-2 pr-4'>Close</button>
       {Object.keys(cart).map((item) => (
         <div className={`${style.item} item`} key={cart[item].id}>
           <img src={cart[item].image} className={`${style.img} img`} />
@@ -19,7 +20,7 @@ const CartModal = ({ cart, visibility, setVisibility }) => {
         </div>
       ))}
       <Link href='/order'>
-          <button className='mx-auto mb-1 w-1/2 rounded-md px-4 py-2 text-lg bg-yellow-vivid-500 text-white'>Checkout</button>
+          <button className='mt-auto mb-4 mx-auto w-1/2 rounded-md px-4 py-2 text-lg bg-yellow-vivid-500 text-white'>Checkout</button>
       </Link>
     </div>
   );

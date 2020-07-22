@@ -20,3 +20,17 @@
     }
 }
 
+@media (max-width: 1023px) {
+    .cartModal {
+        background-color: white;
+        width: 90vw;
+        height: 90vh;
+        min-width: 90vw;
+        max-height: 90vh;
+        margin: 0 auto 0 auto;
+        left: -80vw;
+        border: 1px solid black;
+        z-index: 1;
+    }
+}
+

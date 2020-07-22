@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormStructure = ({ setData, next }) => {
+const FormStructure = ({ setData}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,11 +13,15 @@ const FormStructure = ({ setData, next }) => {
       city: e.target['city'].value,
       email: e.target['emailAddress'].value,
       phone: e.target['phone'].value,
-      zip: e.target['zip-code'].value
+      zip: e.target['zip-code'].value,
+      card: e.target['card-number'].value,
+      card_name: e.target['card-name'].value,
+      expire_date: e.target['expire-date'].value,
+      cvv: e.target['security-code'].value
     }
 
     setData(data);
-    return next(1);
+    console.log('payment done!')
   }
 
   return (
@@ -120,6 +124,50 @@ const FormStructure = ({ setData, next }) => {
               name="zip-code"
               type="text"
               className="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white"
+            />
+          </div>
+          <div>
+            <label className="text-gray-700" htmlFor="card-number">
+              Card Number
+            </label>
+            <input
+              id="card-number"
+              name="card-number"
+              type="text"
+              className="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white"
+            />
+          </div>
+          <div>
+            <label className="text-gray-700" htmlFor="expire-date">
+              Expire date
+            </label>
+            <input
+              id="expire-date"
+              name="expire-date"
+              type="text"
+              className="w-1/3 mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white"
+            />
+          </div>
+          <div>
+            <label className="text-gray-700" htmlFor="card-name">
+              Cardholder name
+            </label>
+            <input
+              id="card-name"
+              name="card-name"
+              type="text"
+              className="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white"
+            />
+          </div>
+          <div>
+            <label className="text-gray-700" htmlFor="security-code">
+              CVV/Security code
+            </label>
+            <input
+              id="security-code"
+              name="security-code"
+              type="text"
+              className="w-1/3 mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white"
             />
           </div>
         </div>

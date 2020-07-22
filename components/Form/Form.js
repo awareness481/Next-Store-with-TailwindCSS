@@ -12,12 +12,14 @@ const defaultData = {
   city: "",
   email: "",
   phone: "",
+  card: "",
+  card_name: "",
+  expire_date: "",
+  cvv: "",
 };
 
 const Form = ({ items }) => {
   const [data, setData] = useState({ ...defaultData });
-  const [displayPayment, setDisplayPayment] = useState(0);
-  
 
   // return (
   //   <>
@@ -30,21 +32,12 @@ const Form = ({ items }) => {
   //   </>
   // );
 
-  if (displayPayment === 0) {
-    return (
-      <>
+  return (
+    <>
       <Navbar />
       <FormStructure setData={setData} next={setDisplayPayment} />
-      </>
-    )
-  } else if (displayPayment === 1) {
-    return (
-      <>
-      <Navbar />
-      <StripeForm />
-      </>
-    )
-  }
+    </>
+  );
 };
 
 const mapStateToProps = (state) => ({

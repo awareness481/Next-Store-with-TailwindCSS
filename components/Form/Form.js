@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import Navbar from "../Navbar";
 import FormStructure from "./FormStructure";
-import StripeForm from "./StripeForm";
 
 const defaultData = {
   firtName: "",
@@ -35,7 +34,7 @@ const Form = ({ items }) => {
   return (
     <>
       <Navbar />
-      <FormStructure setData={setData} next={setDisplayPayment} />
+      <FormStructure setData={setData} />
     </>
   );
 };

@@ -2,6 +2,14 @@
     margin: 0 auto;
 }
 
+.description div:nth-child(even) {
+    background-color: honeydew;
+}
+
+.description div:nth-child(odd) {
+    background-color: lightcyan;
+}
+
 .value {
     min-width: 70%;
     max-width: 70%;

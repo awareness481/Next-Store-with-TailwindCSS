@@ -1,14 +1,13 @@
 import '../styles/index.css'
 import { Provider } from 'react-redux'
-import { store } from '../store'
+import { useStore } from '../store'
 
+export default function App({ Component, pageProps }) {
+  const store = useStore(pageProps.initialReduxState)
 
-const MyApp = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <Component {...pageProps} />
     </Provider>
   )
 }
-
-export default MyApp;

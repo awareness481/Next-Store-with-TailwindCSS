@@ -1,6 +1,5 @@
 import Checkout from '../components/Checkout';
 import Navbar from '../components/Navbar';
-import { withRedux } from '../lib/with-redux';
 
 const Order = (props) => {
   console.log(props);
@@ -12,4 +11,4 @@ const Order = (props) => {
   )
 }
 
-export default withRedux(Order);
+export default Order;

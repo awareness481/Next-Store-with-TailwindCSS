@@ -7,7 +7,9 @@ const Laptop = ({ laptop }) => {
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
         <img
           alt="ecommerce"
-          className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+          height="300"
+          width="300"
+          className="lg:w-1/2 mx-auto mt-16 sm:mt-0 object-cover object-center rounded"
           src={laptop.image}
         />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">

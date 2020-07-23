@@ -1,5 +1,5 @@
 import { INIT_RESULTS } from '../actions/index';
-import { withRedux } from '../lib/with-redux';
+import { initializeStore } from '../store';
 
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
@@ -9,7 +9,6 @@ import ResultsContainer from '../components/ResultsContainer';
 import * as data from '../api-sample.json';
 
 const Index = () => {
-
   return (
     <div>
       <Navbar />
@@ -20,16 +19,21 @@ const Index = () => {
   )
 };
 
-Index.getInitialProps = ({reduxStore}) => {
+export function getStaticProps() {
 
-  const { dispatch } = reduxStore;
+  const reduxStore = initializeStore()
+  const { dispatch } = reduxStore
   dispatch({
     type: INIT_RESULTS,
     results: data.default.laptops
   })
 
-  return {};
+  return {
+    props: {
+      initialReduxState: reduxStore.getState()
+    }
+  };
 
 }
 
-export default withRedux(Index);
+export default Index;

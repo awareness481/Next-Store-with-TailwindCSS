@@ -1,6 +1,7 @@
 .results {
     border: 1px solid rgba(0,0,0, 0.1);
     width: 85vw;
+    min-height: 100vh;
 }
 
 .thumbnail {
@@ -11,7 +12,7 @@
 
 @media (min-width: 1024px) {
     .thumbnail {
-        height: 50vh;
+        height: auto;
         width: 24%;
         margin-left: 0.5%;
         margin-right: 0.5%;

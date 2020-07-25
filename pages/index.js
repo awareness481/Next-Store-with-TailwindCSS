@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div>
       <Navbar />
-      <Banner />
+      
       <SearchContainer />
       <ResultsContainer />
     </div>

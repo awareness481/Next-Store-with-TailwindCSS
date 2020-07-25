@@ -1,6 +1,7 @@
 import Laptop from '../../components/Laptop';
 import LaptopDescription from '../../components/LaptopDescription';
 import Navbar from '../../components/Navbar';
+import * as data from '../../api-sample.json';
 
 const LaptopContainer = ({ laptop }) => {
 
@@ -42,19 +43,16 @@ const LaptopContainer = ({ laptop }) => {
 };
 
 export async function getStaticPaths() {
-  const res = await fetch(`http://localhost:3005/laptops`).then((res) =>
-    res.json()
-  );
+  const res = data.default.laptops;
   const paths = res.map((laptop) => ({ params: { id: laptop.id } }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(
-    `http://localhost:3005/laptops/${params.id}`
-  ).then((res) => res.json());
-
+  
+  
+  const res = data.default.laptops.filter(laptop => laptop.id === params.id)[0];
   const laptop = {
     id: res.id,
     name: res.name,
@@ -71,6 +69,8 @@ export async function getStaticProps({ params }) {
     storage: res.att_storage + "GB",
     weight: res.att_weight + " kg",
   };
+
+  console.log(laptop)
 
   return {
     props: { laptop },

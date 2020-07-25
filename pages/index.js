@@ -22,6 +22,7 @@ const Index = () => {
 export function getStaticProps() {
 
   const reduxStore = initializeStore()
+  console.log(data.default.laptops)
   const { dispatch } = reduxStore
   dispatch({
     type: INIT_RESULTS,

@@ -1,9 +1,10 @@
 import Form from '../components/Form/Form';
+import { withRedux } from '../lib/with-redux';
 
 const FormTest = () => {
   return (
-    <Form/>
+    <Form />
   )
 }
 
-export default FormTest;
+export default withRedux(FormTest);
